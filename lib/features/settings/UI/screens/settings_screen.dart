@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'package:valo/core/resources/app_color.dart';
+import 'package:valo/features/settings/UI/screens/widgets/custom_switch.dart';
 import '../../../../core/services/theme_provider.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/services/local_notifications_services.dart';
@@ -51,79 +51,45 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final themeProvider = Provider.of<ThemeProvider>(context);
 
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Column(
-            children: [
-              const CustomAppBar(title: "Settings"),
-              const SizedBox(height: 16),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          children: [
+            const CustomAppBar(title: "Settings"),
+            SizedBox(height: 16.h),
 
-              // 🌙 Dark Mode
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // 🌙 Dark Mode
+            CustomSwitch(
+              text: "Mode",
+              iconData: Icons.dark_mode,
+              value: themeProvider.isDarkMode,
+              onChanged: (value) {
+                themeProvider.toggleTheme(value);
+              },
+            ),
+
+            // 🔔 Notifications Toggle
+            CustomSwitch(
+              text: "Notifications",
+              iconData: Icons.notifications_active_outlined,
+              value: _notificationsEnabled,
+              onChanged: _toggleNotifications,
+            ),
+
+            const SizedBox(height: 16),
+
+            // 🧾 About App
+            InkWell(
+              onTap: () => Navigator.pushNamed(context, "/about_screen"),
+              child: Row(
                 children: [
-                  const Row(
-                    children: [
-                      Icon(Icons.dark_mode, size: 25),
-                      SizedBox(width: 5),
-                      Text("Dark Mode", style: TextStyle(fontSize: 16)),
-                    ],
-                  ),
-                  Transform.scale(
-                    scale: 0.7,
-                    child: Switch(
-                      value: themeProvider.isDarkMode,
-                      onChanged: (value) {
-                        themeProvider.toggleTheme(value);
-                      },
-                      activeColor: AppColor.primaryColor,
-                      inactiveThumbColor: Colors.grey,
-                      inactiveTrackColor: Colors.grey[300],
-                    ),
-                  ),
+                  Icon(Icons.info_outline, size: 25.r),
+                  SizedBox(width: 5.w),
+                  Text("About App", style: TextStyle(fontSize: 16.sp)),
                 ],
               ),
-
-              // 🔔 Notifications Toggle
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Row(
-                    children: [
-                      Icon(Icons.notifications_active_outlined, size: 25),
-                      SizedBox(width: 5),
-                      Text("Notifications", style: TextStyle(fontSize: 16)),
-                    ],
-                  ),
-                  Transform.scale(
-                    scale: 0.7,
-                    child: Switch(
-                      value: _notificationsEnabled,
-                      onChanged: _toggleNotifications,
-                      activeColor: AppColor.primaryColor,
-                      inactiveThumbColor: Colors.grey,
-                      inactiveTrackColor: Colors.grey[300],
-                    ),
-                  ),
-                ],
-              ),
-
-              const SizedBox(height: 16),
-
-              // 🧾 About App
-              InkWell(
-                onTap: () => Navigator.pushNamed(context, "/about_screen"),
-                child: const Row(
-                  children: [
-                    Icon(Icons.info_outline, size: 25),
-                    SizedBox(width: 5),
-                    Text("About App", style: TextStyle(fontSize: 16)),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

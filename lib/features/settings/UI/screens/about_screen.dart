@@ -37,7 +37,7 @@ class AboutScreen extends StatelessWidget {
                 Text(
                   "VALO APP",
                   style: TextStyle(
-                    fontSize: 26,
+                    fontSize: 26.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
@@ -45,7 +45,7 @@ class AboutScreen extends StatelessWidget {
                 Text(
                   "Version 1.1",
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
                     color: Colors.white,
                   ),
@@ -56,7 +56,7 @@ class AboutScreen extends StatelessWidget {
                 Text(
                   "Made by",
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w400,
                     color: Colors.white,
                   ),
@@ -64,7 +64,7 @@ class AboutScreen extends StatelessWidget {
                 Text(
                   "Abdelsatar | 3BS",
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                   ),
