@@ -63,7 +63,7 @@ abstract class LocalNotificationsServices {
       1,
       null,
       null,
-      RepeatInterval.everyMinute,
+      RepeatInterval.daily,
       details,
       androidScheduleMode: AndroidScheduleMode.alarmClock,
     );
