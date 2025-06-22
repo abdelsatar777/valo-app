@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:valo/core/widgets/is_tablet.dart';
+import 'package:valo/core/services/is_tablet.dart';
 import 'package:valo/features/ranks/UI/screens/widgets/rank_section.dart';
 import '../../../../core/resources/app_color.dart';
 import '../../../../core/widgets/custom_app_bar.dart';

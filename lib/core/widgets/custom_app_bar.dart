@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../resources/app_color.dart';
-import 'is_tablet.dart';
+import '../services/is_tablet.dart';
 
 class CustomAppBar extends StatelessWidget {
   final String title;

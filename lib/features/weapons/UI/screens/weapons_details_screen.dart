@@ -7,7 +7,7 @@ import '../../../../core/resources/app_color.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/custom_options_data_page.dart';
 import '../../../../core/widgets/custom_row_text.dart';
-import '../../../../core/widgets/is_tablet.dart';
+import '../../../../core/services/is_tablet.dart';
 import '../manager/weapon_details_cubit.dart';
 import '../manager/weapon_details_state.dart';
 
@@ -53,7 +53,10 @@ class _WeaponsDetailsScreenState extends State<WeaponsDetailsScreen> {
 
                 //Content
                 Padding(
-                  padding: EdgeInsets.only(right: 15.w, left: 15.w, top: 20.h),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 16,
+                    horizontal: 16,
+                  ),
                   child: CustomScrollView(
                     slivers: [
                       //App Bar
@@ -200,14 +203,7 @@ class _WeaponsDetailsScreenState extends State<WeaponsDetailsScreen> {
         } else {
           return Center(
             child: CircularProgressIndicator(color: AppColor.primaryColor),
-          )
-          //Other
-          /*Center(
-                    child: CircularProgressIndicator(
-                      color: AppColor.primaryColor,
-                    ),
-                  )*/
-          ;
+          );
         }
       },
     );

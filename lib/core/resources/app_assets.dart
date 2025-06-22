@@ -10,4 +10,7 @@ abstract class AppAssets {
 
   //Icon Img
   static final String noWifiImg = "assets/img/no wifi.png";
+  static final String aboutWallpaperImg = "assets/img/about wallpaper.png";
+  static final String logoImg = "assets/img/logo.png";
+  static final String valorantImg = "assets/img/VALORANT.png";
 }

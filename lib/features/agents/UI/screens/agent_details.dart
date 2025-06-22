@@ -6,7 +6,7 @@ import '../../../../core/resources/app_color.dart';
 import '../../../../core/widgets/custom_app_bar.dart';
 import '../../../../core/widgets/custom_options_data_page.dart';
 import '../../../../core/widgets/custom_row_text.dart';
-import '../../../../core/widgets/is_tablet.dart';
+import '../../../../core/services/is_tablet.dart';
 import 'widgets/abilities_card.dart';
 import '../manager/agent_details_cubit.dart';
 import '../manager/agent_details_state.dart';

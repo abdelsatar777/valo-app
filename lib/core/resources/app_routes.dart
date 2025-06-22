@@ -1,3 +1,6 @@
+import 'package:valo/features/settings/UI/screens/about_screen.dart';
+import 'package:valo/features/settings/UI/screens/settings_screen.dart';
+
 import '../../features/agents/UI/screens/agents_screen.dart';
 import '../../features/gun buddies/UI/screens/gun_buddies_screen.dart';
 import '../../features/home/UI/screens/home_screen.dart';
@@ -13,6 +16,8 @@ abstract class AppRoutes {
     //Pages
     "/splash_screen": (context) => SplashScreen(),
     "/home_screen": (context) => HomeScreen(),
+    "/settings_screen": (context) => SettingsScreen(),
+    "/about_screen": (context) => AboutScreen(),
 
     //Options Pages
     "/agents_screen": (context) => AgentsScreen(),

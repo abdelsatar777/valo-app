@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/resources/app_color.dart';
-import '../../../../../core/widgets/is_tablet.dart';
+import '../../../../../core/services/is_tablet.dart';
 import '../../../data/model/option_model.dart';
 
 class OptionCard extends StatelessWidget {

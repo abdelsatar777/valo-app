@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:valo/features/home/UI/screens/widgets/option_card.dart';
 import '../../../../core/resources/app_assets.dart';
-import '../../../../core/widgets/is_tablet.dart';
+import '../../../../core/services/is_tablet.dart';
 import '../../data/model/option_model.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -56,14 +56,27 @@ class HomeScreen extends StatelessWidget {
           SliverToBoxAdapter(child: SizedBox(height: 26.h)),
           //Page Title
           SliverToBoxAdapter(
-            child: Text(
-              "valorant guide",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: tablet ? 22.sp : 16.sp,
-                letterSpacing: -0.3,
-              ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                SizedBox(width: 50.w),
+                Expanded(
+                  child: Text(
+                    "valorant guide",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: tablet ? 22.sp : 16.sp,
+                      letterSpacing: -0.3,
+                    ),
+                  ),
+                ),
+                IconButton(
+                  onPressed:
+                      () => Navigator.pushNamed(context, "/settings_screen"),
+                  icon: Icon(Icons.settings, size: 22, color: Colors.white),
+                ),
+              ],
             ),
           ),
           SliverToBoxAdapter(child: SizedBox(height: 10.h)),
